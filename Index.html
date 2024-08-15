@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="sound.png">
+    <title>Music Play</title>
+</head>
+  <body>
+
+    <nav class="sidebar">
+        <div class="sidebar-top-wrapper">
+          <div class="sidebar-top">
+            <a href="#" class="logo__wrapper">
+              <img src="Perfil.jpg" alt="Logo" class="logo-small">
+              <span class="hide company-name">
+                Bthomas
+              </span>
+            </a>
+          </div>
+          <button class="expand-btn" type="button">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-labelledby="exp-btn" role="img">
+              <title id="exp-btn">Expand/Collapse Menu</title>
+              <path d="M6.00979 2.72L10.3565 7.06667C10.8698 7.58 10.8698 8.42 10.3565 8.93333L6.00979 13.28"
+                stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+        <div class="search__wrapper">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-labelledby="search-icon" role="img">
+            <title id="search-icon">Search</title>
+            <path
+              d="M9 9L13 13M5.66667 10.3333C3.08934 10.3333 1 8.244 1 5.66667C1 3.08934 3.08934 1 5.66667 1C8.244 1 10.3333 3.08934 10.3333 5.66667C10.3333 8.244 8.244 10.3333 5.66667 10.3333Z"
+              stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+          <input type="text" aria-labelledby="search-icon">
+        </div>
+        <div class="sidebar-links">
+          <ul>
+            <li>
+              <a href="#dashboard" title="Dashboard" class="tooltip">
+                <i style="margin-left: 5px;" class="fa-regular fa-heart"></i>
+                <span class="link hide">Tus me gustas</span>
+                <span class="tooltip__content">Tus me gustas</span>
+              </a>
+            </li>
+            <li>
+              <a href="#market-overview" class="tooltip">
+                <i style="margin-left: 5px;" class="fa-solid fa-headphones"></i>
+                <span class="link hide">Tus playlist</span>
+                <span class="tooltip__content">Tus playlist</span>
+              </a>
+            </li>
+            <li>
+              <a href="#analytics" title="Analytics" class="tooltip">
+                <i style="margin-left: 6px;" class="fa-solid fa-podcast"></i>
+                <span class="link hide">Tus podcast</span>
+                <span class="tooltip__content">Tus podcast</span>
+              </a>
+            </li>
+    
+            <li>
+              <a href="#reports" title="Reports" class="tooltip">
+                <i style="margin-left: 5px;" class="fa-solid fa-compact-disc"></i>
+                <span class="link hide">Tus albumes</span>
+                <span class="tooltip__content">Tus albumes</span>
+              </a>
+            </li>
+            <li>
+              <a href="#settings" title="Settings" class="tooltip">
+                <i style="margin-left: 5px;" class="fa-solid fa-gear"></i>
+                <span class="link hide">Settings</span>
+                <span class="tooltip__content">Settings</span>
+              </a>
+            </li>
+            <li>
+              <a href="#notifications" title="Notifications" class="tooltip">
+                <i style="margin-left: 6px;" class="fa-regular fa-bell"></i>
+                <span class="link hide">Notifications</span>
+                <span class="tooltip__content">Notifications</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="sidebar__profile">
+          <div class="avatar__wrapper">
+            <img class="avatar" src="Perfil.jpg" alt="Joe Doe Picture">
+            <div class="online__status"></div>
+          </div>
+          <div class="avatar__name hide">
+            <div class="user-name">Thomas Bustamante</div>
+            <div class="email">tbus2004@atheros.ai</div>
+          </div>
+          <a href="#logout" class="logout hide">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-logout" width="24" height="24"
+              viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+              stroke-linejoin="round" aria-labelledby="logout-icon" role="img">
+              <title id="logout-icon">log out</title>
+              <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+              <path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2"></path>
+              <path d="M9 12h12l-3 -3"></path>
+              <path d="M18 15l3 -3"></path>
+            </svg>
+          </a>
+        </div>
+      </nav>
+
+      <div class="container">
+        <div class="song-info">
+          <div class="artist-name"></div>
+          <div class="song-name"></div>
+          <div class="progress-bar">
+              <div class="fill-bar"></div>
+          </div>
+          <div class="time">0:00 - 0:00</div>
+        </div>
+        <div class="disk">
+          <!-- <div class="circle"></div> -->
+          <div id="cover" class="cover"></div>
+        </div>
+        <div class="controls">
+          <i id="prev" class="prev-btn fa-solid fa-backward"></i>
+          <i id="play" class="paly-btn fa-solid fa-play"></i> 
+          <i id="next" class="next-btn fa-solid fa-forward"></i>
+          <i id="follw" class="fa-regular fa-heart"></i>
+        </div>
+      </div>
+
+      <div id="team-members">
+        <article class="team-member">
+            <img
+                class="team-member-avatar"
+                src="https://loudcave.es/wp-content/uploads/image-67.png"
+                alt="James Alexander"
+            >
+            <div class="team-member-name">
+                <h3>We Don't Trust You</h3>
+                <p>Future, Metro Boomin</p>
+            </div>
+        </article>
+        <article class="team-member">
+            <img
+                class="team-member-avatar"
+                src="https://ih1.redbubble.net/image.4534734018.6732/flat,750x1000,075,t.jpg"
+            >
+            <div class="team-member-name">
+                <h3>
+                  Creepin
+                </h3>
+                <p>
+                  Metro Boomin
+                </p>
+            </div>
+        </article>
+        <article class="team-member">
+            <img
+                class="team-member-avatar"
+                src="https://images.genius.com/4640c40bd4cec077ba11e54347624ac7.1000x563x1.jpg"
+            >
+            <div class="team-member-name">
+                <h3>
+                  STARGAZING
+                </h3>
+                <p>
+                  Travis Scott
+                </p>
+            </div>
+        </article>
+        <article class="team-member">
+            <img
+                class="team-member-avatar"
+                src="https://i.scdn.co/image/ab67616d0000b2736ed9aef791159496b286179f"
+            >
+            <div class="team-member-name">
+                <h3>
+                  Home
+                </h3>
+                <p>
+                  Metro Boomin, Don Toliver
+                </p>
+            </div>
+        </article>
+    </div>
+
+    <script src="Script.js"></script>
+  </body>
+</html>
